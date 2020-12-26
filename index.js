@@ -42,13 +42,20 @@ function calculateRelatedFunction() {
 }
 
 function calculateAnotherPoint(typeOfCordenate) {
+    if (a == null || b == null) {
+        alert("You may define a related function first...");
+        return;
+    }
+    
     if (typeOfCordenate) {
-        const yi = null;
-        // se 1 vai seguir o calculo para descobrir o X
-        // x = (yi - b) / a
+        const yi = parseInt(document.getElementById("yi").value);
+        x = (yi - b) / a;
+        var content = `(${x}, ${yi})`;
+        document.getElementById("point_with_y").innerHTML=content;
     }else{
-        const xi = null;
-        // se 0 vai seguir o calculo para descobrir o Y
-        // y = a*xi + b
+        const xi = parseInt(document.getElementById("xi").value);
+        y = a*xi + b;
+        var content = `(${xi}, ${y})`;
+        document.getElementById("point_with_x").innerHTML=content;
     }
 }
